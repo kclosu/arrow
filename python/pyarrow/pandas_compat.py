@@ -348,9 +348,9 @@ def _index_level_name(index, i, column_names):
 def _get_columns_to_convert(df, schema, preserve_index, columns):
     columns = _resolve_columns_of_interest(df, schema, columns)
 
-    if not df.columns.is_unique:
+    if not columns.is_unique:
         raise ValueError(
-            'Duplicate column names found: {}'.format(list(df.columns))
+            'Duplicate column names found: {}'.format(list(columns))
         )
 
     if schema is not None:
